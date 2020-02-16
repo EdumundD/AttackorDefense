@@ -375,4 +375,8 @@ public class GameFacade : MonoBehaviour
 
         _battleManager.FrameInputs.Add(tick, frameInput);
     }
+    public Transform CreateSlider()
+    {
+        return _uiManager.CreateSlider();
+    }
 }

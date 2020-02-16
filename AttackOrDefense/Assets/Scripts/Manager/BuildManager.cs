@@ -133,7 +133,6 @@ public class BuildManager : BaseManager
                 {
                     facade.inputMono.frameInput.createBarrack = new CreateBarrack(new FixVector2((Fix64)target.x + 0.5f, (Fix64)target.z + 0.5f), 
                         (int)buildingType - GameData.g_towerFactory.towerDataList.Count);
-                    Debug.Log((int)buildingType);
                 }
                 
                 GameObject.Destroy(selectBuilding);

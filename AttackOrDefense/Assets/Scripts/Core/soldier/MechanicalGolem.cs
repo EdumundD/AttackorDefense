@@ -10,6 +10,9 @@ public class MechanicalGolem : BaseSoldier
 
         //设置名称
         m_scName = "mechanicalgolem";
+
+        showHP = m_gameObject.GetComponent<ShowHP>();
+        showHP.maxValue = (float)hp;
     }
 
     //- 每帧循环

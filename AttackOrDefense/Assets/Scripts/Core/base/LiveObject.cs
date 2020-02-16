@@ -19,6 +19,9 @@ public class LiveObject : BaseObject
     private Fix64 m_fixOrignalHp = Fix64.Zero;
     public Fix64 orignalHp { get { return m_fixOrignalHp; } set { m_fixOrignalHp = value; } }
 
+    private ShowHP m_showHP = new ShowHP();
+    public ShowHP showHP { get { return m_showHP; } set { m_showHP = value; } }
+
     //普通伤害
     private Fix64 m_fixDamage = Fix64.Zero;
     public Fix64 damage { get { return m_fixDamage; } set { m_fixDamage = value; } }
@@ -222,6 +225,7 @@ public class LiveObject : BaseObject
 
             //扣血,如果扣到小于等于0则死亡
             m_fixHp = m_fixHp - damage;
+            showHP.value = (float)m_fixHp/(float)m_fixOrignalHp;
 
             if (m_fixHp <= Fix64.Zero)
             {
@@ -230,7 +234,6 @@ public class LiveObject : BaseObject
                     m_dying = true;
                     if (m_statemachine.getState() != "soldierdeath")
                     {
-                        //UnityTools.Log("change to death");
                         changeState("soldierdeath");
                     }
                     sendDeadInfoToRelativeObj();

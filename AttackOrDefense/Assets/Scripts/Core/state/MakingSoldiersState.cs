@@ -33,20 +33,25 @@ public class MakingSoldiersState : BaseState
 
         if(m_unit.m_scName == "mechanicalgolembarrack")
         {
+            m_unit.delayDo((Fix64)1, delegate () {
+                m_unit.createSoldier();
+            }, "createSoldier");
+        }
+        else if(m_unit.m_scName == "metalonbarrack")
+        {
+            m_unit.delayDo((Fix64)1, delegate () {
+                m_unit.createSoldier();
+            }, "createSoldier");
 
-        }else if(m_unit.m_scName == "metalonbarrack")
-        m_unit.delayDo((Fix64)1,delegate() {
-            m_unit.createSoldier();
-        },"createSoldier");
+            m_unit.delayDo((Fix64)2, delegate () {
+                m_unit.createSoldier();
+            }, "createSoldier");
 
-        m_unit.delayDo((Fix64)2, delegate () {
-            m_unit.createSoldier();
-        }, "createSoldier");
-
-        m_unit.delayDo((Fix64)3, delegate () {
-            m_unit.createSoldier();
-            m_unit.changeState("cooling",(Fix64)12);
-        }, "createSoldier");
+            m_unit.delayDo((Fix64)3, delegate () {
+                m_unit.createSoldier();
+                m_unit.changeState("cooling", (Fix64)12);
+            }, "createSoldier");
+        }
     }
 
 

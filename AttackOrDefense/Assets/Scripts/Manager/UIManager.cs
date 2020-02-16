@@ -158,4 +158,10 @@ public class UIManager:BaseManager {
         }
         msgPanel.ShowMessageSync(msg);
     }
+    public Transform CreateSlider()
+    {
+        var slider = GameObject.Instantiate(Resources.Load("UIPanel/Slider")) as GameObject;
+        slider.transform.SetParent(CanvasTransform, false);
+        return slider.transform;
+    }
 }

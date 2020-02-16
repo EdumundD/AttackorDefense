@@ -20,6 +20,13 @@ public class Metalon : BaseSoldier
 
         //设置名称
         m_scName = "metalon";
+
+        //showHP = m_gameObject.transform.Find("Canvas").Find("Slider").GetComponent<ShowHP>();
+        //var slider = prefab.create("UIPanel/Slider").transform;
+        showHP = GameFacade.Instance.CreateSlider().GetComponent<ShowHP>();
+        showHP.maxValue = (float)hp;
+        showHP.offsetPos = new UnityEngine.Vector2(0, 30);
+        showHP.target = m_gameObject.transform;
     }
 
     //- 每帧循环
