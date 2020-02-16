@@ -17,7 +17,7 @@ public class BaseObject : UnityObject
     public MoveTo movetoAction { get { return m_movetoAction; } set { m_movetoAction = value; } }
 
     //名字
-    protected string m_scName = "";
+    public string m_scName = "";
     public string name { get { return m_scName; } set { m_scName = value; } }
 
     //速度

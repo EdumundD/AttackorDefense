@@ -98,18 +98,15 @@ public class GameData
     // @return none
     public static int[,] GetBuildMap()
     {
-        if (null == g_buildmap)
+        g_buildmap = new int[58, 58];
+        foreach (LandData ld in g_listLand)
         {
-            g_buildmap = new int[58, 58];
-            foreach (LandData ld in g_listLand)
-            {
-                if (ld.isForTower)
-                    g_buildmap[(int)ld.localPosition.x, (int)ld.localPosition.z] = 1;
-                if (ld.isForBarrack)
-                    g_buildmap[(int)ld.localPosition.x, (int)ld.localPosition.z] = 2;
-                if (ld.isBuild)
-                    g_buildmap[(int)ld.localPosition.x, (int)ld.localPosition.z] = 3;
-            }
+            if (ld.isForTower)
+                g_buildmap[(int)ld.localPosition.x, (int)ld.localPosition.z] = 1;
+            if (ld.isForBarrack)
+                g_buildmap[(int)ld.localPosition.x, (int)ld.localPosition.z] = 2;
+            if (ld.isBuild)
+                g_buildmap[(int)ld.localPosition.x, (int)ld.localPosition.z] = 3;
         }
         return g_buildmap;
     }

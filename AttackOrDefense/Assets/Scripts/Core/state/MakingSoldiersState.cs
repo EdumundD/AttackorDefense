@@ -31,6 +31,10 @@ public class MakingSoldiersState : BaseState
     {
         m_unit.isCooling = true;
 
+        if(m_unit.m_scName == "mechanicalgolembarrack")
+        {
+
+        }else if(m_unit.m_scName == "metalonbarrack")
         m_unit.delayDo((Fix64)1,delegate() {
             m_unit.createSoldier();
         },"createSoldier");
