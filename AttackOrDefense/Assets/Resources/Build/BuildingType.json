@@ -1,0 +1,34 @@
+{
+  "infoList": [
+    {
+      "buildingTypeString": "None",
+      "path": "Build/Buildings_C3"
+    },
+
+    {
+      "buildingTypeString": "BasicArrowTower",
+      "path": "Build/Buildings_C3"
+    },
+
+    {
+      "buildingTypeString": "BasicMagicTower",
+      "path": "Build/Buildings_I3"
+    },
+
+    {
+      "buildingTypeString": "BasicArtilleryTower",
+      "path": "Build/Buildings_I6"
+    },
+
+    {
+      "buildingTypeString": "MetalonFactory",
+      "path": "Build/Buildings_I6"
+    },
+
+    {
+      "buildingTypeString": "MechanicalGolemFactory",
+      "path": "Build/Buildings_I6"
+    }
+
+  ]
+}
