@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿//
+// @brief: Road类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/15
+// 
+// 
+//
+
 using UnityEngine;
 public class Road :MonoBehaviour
 {

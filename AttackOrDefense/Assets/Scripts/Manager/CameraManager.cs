@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 相机管理类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/13
+// 
+// 
+//
+
 using UnityEngine;
 using DG.Tweening;
 

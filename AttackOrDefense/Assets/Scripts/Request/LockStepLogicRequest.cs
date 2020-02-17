@@ -1,8 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//
+// @brief: 帧同步请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/3
+// 
+// 
+//
+
 using Common;
 
 public class LockStepLogicRequest:BaseRequest

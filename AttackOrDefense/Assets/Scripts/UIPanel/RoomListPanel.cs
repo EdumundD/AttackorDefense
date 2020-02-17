@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿//
+// @brief: 房间列表面板类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/17
+// 
+// 
+//
+
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;

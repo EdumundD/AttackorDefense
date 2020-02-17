@@ -1,12 +1,11 @@
 ﻿//
 // @brief: 延迟执行的事件
 // @version: 1.0.0
-// @author helin
-// @date: 8/20/2018
+// @author lhy
+// @date: 2020/2/11
 // 
 // 
 //
-using System.Collections;
 
 public class DelayDo : BaseAction
 {

@@ -1,6 +1,14 @@
-﻿using System.Collections;
+﻿//
+// @brief: Point类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/15
+// 
+// 
+//
 
-    public class Point
+
+public class Point
     {
     public Point ParentPoint { get; set; }
     public int F { get; set; }  //F=G+H

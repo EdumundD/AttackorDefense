@@ -1,12 +1,11 @@
 ﻿//
 // @brief: 箭塔
 // @version: 1.0.0
-// @author helin
-// @date: 8/20/2018
+// @author lhy
+// @date: 2020/2/6
 // 
 // 
 //
-using System.Collections;
 
 public class ArrowTower : BaseTower
 {
@@ -24,13 +23,15 @@ public class ArrowTower : BaseTower
         loadProperties();
 
         //每个塔加载的资源不同,所以单独处理
-        createFromPrefab("Build/Buildings_I3", this);
+        createFromPrefab("Build/Tower/ArrowTower/ArrowTowerLv1", this);
 
         //调用父类的构造函数
         //self[BASETOWER]:init(self)
 
         //设置名字为魔法塔
-        m_scName = "magicstand";
+        m_scName = "arrowtower";
+
+        createBulletOffset = new FixVector3((Fix64)0, (Fix64)1, (Fix64)0);
     }
 
     //- 每帧循环

@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 房间详细信息面板类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/20
+// 
+// 
+//
+
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;

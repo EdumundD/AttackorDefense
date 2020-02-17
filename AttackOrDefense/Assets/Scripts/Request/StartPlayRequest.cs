@@ -1,4 +1,13 @@
-﻿using Common;
+﻿//
+// @brief: 正式开始游戏请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/12/5
+// 
+// 
+//
+
+using Common;
 using System;
 
 public class StartPlayRequest : BaseRequest {

@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 客户端管理类(接收、发送消息)
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/20
+// 
+// 
+//
+
 using UnityEngine;
 using System.Net.Sockets;
 using System;
@@ -52,11 +59,11 @@ public class ClientManager:BaseManager  {
     }
     private void OnProcessDataCallBack(ActionCode actionCode,string data)
     {
-        //if (actionCode != ActionCode.LockStepLogic)
-        //{
-        //    Debug.Log("ActionCode: " + actionCode + " 解析出来一条消息: " + data);
-        //}
-        Debug.Log("ActionCode: " + actionCode + " 解析出来一条消息: " + data);
+        if (actionCode != ActionCode.LockStepLogic)
+        {
+            Debug.Log("ActionCode: " + actionCode + " 解析出来一条消息: " + data);
+        }
+        //Debug.Log("ActionCode: " + actionCode + " 解析出来一条消息: " + data);
         facade.HandleReponse(actionCode, data);
     }
 

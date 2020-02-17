@@ -64,7 +64,7 @@ public class GameData
     public static ActionMainManager g_actionMainManager = new ActionMainManager();
 
     //子弹管理器
-    public static BulletFactory g_bulletManager = new BulletFactory();
+    public static BulletFactory g_bulletFactory = new BulletFactory();
 
     //战斗是否结束
     public static bool g_bBattleEnd = false;

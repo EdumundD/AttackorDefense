@@ -1,6 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 管理基类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/10
+// 
+// 
+//
 
 public class BaseManager {
     protected GameFacade facade;

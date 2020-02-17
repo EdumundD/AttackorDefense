@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 退出房间请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/23
+// 
+// 
+//
+
 using Common;
 
 public class QuitRomRequest : BaseRequest {

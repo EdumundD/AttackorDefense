@@ -1,7 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿//
+// @brief: 用户信息类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/15
+// 
+// 
+//
+
 
 
 public class UserData

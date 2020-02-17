@@ -1,6 +1,13 @@
-﻿using System.Collections;
+﻿//
+// @brief: 房间列表刷新请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/19
+// 
+// 
+//
+
 using System.Collections.Generic;
-using UnityEngine;
 using Common;   
 
 public class ListRoomRequest : BaseRequest {

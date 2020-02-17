@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 创建房间请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/20
+// 
+// 
+//
+
 using Common;
 
 public class CreatRoomRequest : BaseRequest {

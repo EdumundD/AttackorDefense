@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿//
+// @brief: MechanicalGolem类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/10
+// 
+// 
+//
+
 
 public class MechanicalGolem : BaseSoldier
 {
@@ -11,8 +19,11 @@ public class MechanicalGolem : BaseSoldier
         //设置名称
         m_scName = "mechanicalgolem";
 
-        showHP = m_gameObject.GetComponent<ShowHP>();
+        //设置血条
+        showHP = GameFacade.Instance.CreateSlider().GetComponent<ShowHP>();
         showHP.maxValue = (float)hp;
+        showHP.offsetPos = new UnityEngine.Vector2(0, 110);
+        showHP.target = m_gameObject.transform;
     }
 
     //- 每帧循环

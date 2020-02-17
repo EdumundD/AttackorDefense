@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿//
+// @brief: UI管理类(统管所有的UI类)
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/10
+// 
+// 
+//
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;

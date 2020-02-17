@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿//
+// @brief: 面板基类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/10
+// 
+// 
+//
+
+using UnityEngine;
 using System.Collections;
 
 public class BasePanel : MonoBehaviour {

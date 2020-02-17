@@ -2,15 +2,15 @@
 // @brief: unity对象基类
 // @version: 1.0.0
 // @author lhy
-// @date: 24/1/2020
+// @date: 2020/1/22
 // 
 // 
 //
+
 #if _CLIENTLOGIC_
 using UnityEngine;
 #endif
 
-using System.Collections;
 
 public class UnityObject
 {

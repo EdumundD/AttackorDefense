@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 游戏面板类（游戏开始计时器、战绩）
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/1/20
+// 
+// 
+//
+
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;

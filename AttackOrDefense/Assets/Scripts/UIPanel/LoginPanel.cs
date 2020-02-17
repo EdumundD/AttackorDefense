@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 登陆面板类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/15
+// 
+// 
+//
+
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;

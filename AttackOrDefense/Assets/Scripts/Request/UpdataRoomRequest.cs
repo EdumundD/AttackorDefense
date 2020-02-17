@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 刷新房间信息请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/29
+// 
+// 
+//
+
 using Common;
 
 public class UpdataRoomRequest : BaseRequest {

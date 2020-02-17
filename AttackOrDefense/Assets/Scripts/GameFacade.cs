@@ -1,9 +1,16 @@
-﻿using System.Collections;
+﻿//
+// @brief: Manager管理主类(统管所有的Manager)
+// @version: 1.0.0
+// @author lhy
+// @date: 11/10/2019
+// 
+// 
+//
+
 using System.Collections.Generic;
 using System;
 using UnityEngine;
 using Common;
-using System.Linq;
 
 public class GameFacade : MonoBehaviour
 {

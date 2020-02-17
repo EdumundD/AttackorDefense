@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 声音管理类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/15
+// 
+// 
+//
+
 using UnityEngine;
 
 public class AudioManager :BaseManager {

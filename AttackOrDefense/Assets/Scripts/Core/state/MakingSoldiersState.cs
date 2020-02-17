@@ -1,5 +1,11 @@
-﻿using System.Collections;
-
+﻿//
+// @brief: 生成士兵状态
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/15
+// 
+// 
+//
 
 public class MakingSoldiersState : BaseState
 {
@@ -35,6 +41,10 @@ public class MakingSoldiersState : BaseState
         {
             m_unit.delayDo((Fix64)1, delegate () {
                 m_unit.createSoldier();
+            }, "createSoldier");
+
+            m_unit.delayDo((Fix64)3, delegate () {
+                m_unit.changeState("cooling", (Fix64)12);
             }, "createSoldier");
         }
         else if(m_unit.m_scName == "metalonbarrack")

@@ -1,12 +1,12 @@
 ﻿//
 // @brief: 存在的对象基类
 // @version: 1.0.0
-// @author helin
-// @date: 8/20/2018
+// @author lhy
+// @date: 2020/1/25
 // 
 // 
 //
-using System.Collections;
+
 using System.Collections.Generic;
 
 public class LiveObject : BaseObject
@@ -50,6 +50,10 @@ public class LiveObject : BaseObject
     //是否处于冷却状态
     private bool m_bIsCooling = false;
     public bool isCooling { get { return m_bIsCooling; } set { m_bIsCooling = value; } }
+
+    //发射点偏移量
+    private FixVector3 m_createBulletOffset = FixVector3.Zero;
+    public FixVector3 createBulletOffset { get { return m_createBulletOffset; } set { m_createBulletOffset = value; } }
 
     //- 设置血量
     // 

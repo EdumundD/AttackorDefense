@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 消息解析类(沾包、分包处理)
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/20
+// 
+// 
+//
+
 using System;
 using Common;
 using System.Text;

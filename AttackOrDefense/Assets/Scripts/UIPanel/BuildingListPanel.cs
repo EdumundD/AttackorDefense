@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿//
+// @brief: 建造面板类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/1/22
+// 
+// 
+//
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

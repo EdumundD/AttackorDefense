@@ -1,5 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿//
+// @brief: 建造管理类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/1/20
+// 
+// 
+//
+
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -30,7 +38,7 @@ public class BuildManager : BaseManager
     private BuildingType buildingType;
 
     //建筑物的Renderer组件
-    private Renderer cubeRenderer = null;
+    private List<Renderer> cubeRenderers = null;
 
     //鼠标指针所在Land
     private GameObject selectLand = null;
@@ -76,7 +84,9 @@ public class BuildManager : BaseManager
             string path = buildingPathDict.TryGet(bt);
             selectBuilding = GameObject.Instantiate(Resources.Load(path)) as GameObject;
             selectBuilding.transform.SetParent( BuildGo.transform, false);
-            cubeRenderer = selectBuilding.GetComponent<Renderer>();
+            //cubeRenderer = selectBuilding.GetComponent<Renderer>();
+            cubeRenderers = new List<Renderer>();
+
         }
     }
     public override void Update()
@@ -104,19 +114,52 @@ public class BuildManager : BaseManager
                 g_buildmap[(int)target.x, (int)target.z + 1] == 0 || g_buildmap[(int)target.x, (int)target.z + 1] == 3 ||
                 g_buildmap[(int)target.x + 1, (int)target.z + 1] == 0 || g_buildmap[(int)target.x + 1, (int)target.z + 1] == 3)
             {
-                cubeRenderer.material.color = new Color(200f / 255, 1f / 255, 1f / 255, 255f / 255);
+                //cubeRenderer.material.color = new Color(200f / 255, 1f / 255, 1f / 255, 255f / 255);
                 isAllowedBuild = false;
+                if(cubeRenderers.Count == 0)
+                {
+                    if (GetLandData(target) != null)
+                        cubeRenderers.Add(GetLandData(target).gameObject.GetComponent<Renderer>());
+                    if (GetLandData(new Vector3(target.x + 1, target.y, target.z)) != null)
+                        cubeRenderers.Add(GetLandData(new Vector3(target.x + 1, target.y, target.z)).gameObject.GetComponent<Renderer>());
+                    if (GetLandData(new Vector3(target.x, target.y, target.z + 1)) != null)
+                        cubeRenderers.Add(GetLandData(new Vector3(target.x, target.y, target.z + 1)).gameObject.GetComponent<Renderer>());
+                    if (GetLandData(new Vector3(target.x + 1, target.y, target.z + 1)) != null)
+                        cubeRenderers.Add(GetLandData(new Vector3(target.x + 1, target.y, target.z + 1)).gameObject.GetComponent<Renderer>());
+
+                    foreach (Renderer renderer in cubeRenderers)
+                    {
+                        renderer.material.color = new Color(200f / 255, 1f / 255, 1f / 255, 255f / 255);
+                    }
+                }
+                else
+                {
+                    if (target.x != cubeRenderers[0].gameObject.transform.position.x || target.z != cubeRenderers[0].gameObject.transform.position.z)
+                    {
+                        Debug.Log(target.x + "," + target.z + " | " + cubeRenderers[0].gameObject.transform.position.x + cubeRenderers[0].gameObject.transform.position.z);
+                        foreach (Renderer renderer in cubeRenderers)
+                        {
+                            renderer.material.color = new Color(188f / 255, 188f / 255, 188f / 255, 255f / 255);
+                        }
+                        cubeRenderers.Clear();
+                    }
+                }
+                
             }
             else
             {
+                foreach (Renderer renderer in cubeRenderers)
+                {
+                    renderer.material.color = new Color(188f / 255, 188f / 255, 188f / 255, 255f / 255);
+                }
                 isAllowedBuild = true;
-                cubeRenderer.material.color = new Color(188f / 255, 188f / 255, 188f / 255, 255f / 255);
+                //ubeRenderer.material.color = new Color(188f / 255, 188f / 255, 188f / 255, 255f / 255);
             }
             
             //让建筑物跟随鼠标
             if (target != Vector3.zero)
             {
-                selectBuilding.transform.position = target;
+                selectBuilding.transform.position = new Vector3(target.x + 0.5f, target.y, target.z + 0.5f);
             }
             if (Input.GetMouseButtonDown(0) && isAllowedBuild)
             {
@@ -162,7 +205,7 @@ public class BuildManager : BaseManager
         }
         if(landData == null)
         {
-            Debug.LogError("无法找到对应的Land target:" + target.ToString());
+            //Debug.LogError("无法找到对应的Land target:" + target.ToString());
         }
         return landData;
     }

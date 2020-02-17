@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿//
+// @brief: MechanicalGolem兵营类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/10
+// 
+// 
+//
+
 
 class MechanicalGolemBarrack : BaseBarrack
 {

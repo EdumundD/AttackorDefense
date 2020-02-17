@@ -2,15 +2,12 @@
 // @brief: 帧同步核心逻辑
 // @version: 1.0.0
 // @author lhy
-// @date: 1/20/2020
+// @date: 2020/2/1
 // 
 // 
 //
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Common;
 
 public class LockStepLogic {

@@ -1,5 +1,12 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿//
+// @brief: 字典帮助类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/10
+// 
+// 
+//
+
 using System.Collections.Generic;
 
 /// <summary>

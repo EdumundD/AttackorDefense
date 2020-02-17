@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 注册请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/15
+// 
+// 
+//
+
 using Common;
 
 public class RegisterRequest : BaseRequest {

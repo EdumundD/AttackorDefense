@@ -1,4 +1,13 @@
-﻿using System;
+﻿//
+// @brief: A*算法类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/15
+// 
+// 
+//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 

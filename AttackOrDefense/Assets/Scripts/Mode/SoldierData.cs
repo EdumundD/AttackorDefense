@@ -1,8 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//
+// @brief: 士兵信息类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/4
+// 
+// 
+//
 
 
 public class SoldierData

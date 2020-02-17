@@ -1,12 +1,11 @@
 ﻿//
 // @brief: 塔攻击状态
 // @version: 1.0.0
-// @author helin
-// @date: 8/20/2018
+// @author lhy
+// @date: 2020/2/13
 // 
 // 
 //
-using System.Collections;
 
 public class TowerAttackState : BaseState
 {
@@ -42,7 +41,7 @@ public class TowerAttackState : BaseState
         //UnityTools.Log("towerattack.onEnter");
         BaseSoldier soldier = (BaseSoldier)m_unit.lockedAttackUnit;
         //UnityTools.Log("发射一根箭");
-        GameData.g_bulletManager.createBullet(m_unit, soldier, m_unit.m_fixv3LogicPosition, soldier.m_fixv3LogicPosition);
+        GameData.g_bulletFactory.createBullet(m_unit, soldier, m_unit.m_fixv3LogicPosition + m_unit.createBulletOffset, soldier.m_fixv3LogicPosition);
         m_unit.changeState("cooling", m_unit.attackSpeed);
     }
 

@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 土地类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/1/20
+// 
+// 
+//
+
 using UnityEngine;
 
 public class LandData : MonoBehaviour

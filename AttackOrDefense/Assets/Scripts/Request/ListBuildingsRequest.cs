@@ -1,6 +1,13 @@
-﻿using System.Collections;
+﻿//
+// @brief: 获取建筑物列表请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/1/20
+// 
+// 
+//
+
 using System.Collections.Generic;
-using UnityEngine;
 using Common;
 
 public class ListBuildingsRequest : BaseRequest

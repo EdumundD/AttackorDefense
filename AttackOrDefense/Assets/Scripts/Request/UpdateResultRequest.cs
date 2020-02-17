@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 更新战绩请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/27
+// 
+// 
+//
+
 using Common;
 
 public class UpdateResultRequest : BaseRequest {

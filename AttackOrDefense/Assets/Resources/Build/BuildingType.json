@@ -2,17 +2,17 @@
   "infoList": [
     {
       "buildingTypeString": "None",
-      "path": "Build/Buildings_C3"
+      "path": "Build/Tower/ArrowTower/ArrowTowerLv1"
     },
 
     {
       "buildingTypeString": "BasicArrowTower",
-      "path": "Build/Buildings_C3"
+      "path": "Build/Tower/ArrowTower/ArrowTowerLv1"
     },
 
     {
       "buildingTypeString": "BasicMagicTower",
-      "path": "Build/Buildings_I3"
+      "path": "Build/Tower/ArrowTower/ArrowTowerLv2"
     },
 
     {

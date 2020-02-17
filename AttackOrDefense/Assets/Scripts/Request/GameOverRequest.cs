@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 结束游戏请求类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/12/10
+// 
+// 
+//
+
 using Common;
 
 public class GameOverRequest : BaseRequest {

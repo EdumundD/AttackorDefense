@@ -1,12 +1,12 @@
 ﻿//
 // @brief: 移动到指定位置的动作事件
 // @version: 1.0.0
-// @author helin
-// @date: 8/20/2018
+// @author lhy
+// @date: 2020/2/11
 // 
 // 
 //
-using System.Collections;
+
 using System.Collections.Generic;
 
 public class MoveTo : BaseAction

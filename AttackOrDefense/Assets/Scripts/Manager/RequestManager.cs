@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿//
+// @brief: 请求管理类(统管所有的请求类，分发回应)
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/20
+// 
+// 
+//
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Common;

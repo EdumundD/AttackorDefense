@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 开始面板类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/10
+// 
+// 
+//
+
 using UnityEngine.UI;
 using DG.Tweening;
 

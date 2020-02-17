@@ -1,12 +1,13 @@
 ﻿//
 // @brief: 塔基类
 // @version: 1.0.0
-// @author helin
-// @date: 8/20/2018
+// @author lhy
+// @date: 2020/2/6
 // 
 // 
 //
-using System.Collections;
+
+using HighlightingSystem;
 
 public class BaseTower : LiveObject
 {
@@ -25,6 +26,9 @@ public class BaseTower : LiveObject
 
         //设置起作用的单元主体
         m_statemachine.setUnit(this);
+
+        //开启HighLighter脚本
+        m_gameObject.GetComponent<Highlighter>().enabled = true;
     }
 
     //- 每帧循环

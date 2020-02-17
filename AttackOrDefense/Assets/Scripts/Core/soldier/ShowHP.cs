@@ -1,4 +1,12 @@
-﻿using System;
+﻿//
+// @brief: 血量显示类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/15
+// 
+// 
+//
+
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//
+// @brief: 显示倒计时请求类（开始游戏的倒计时）
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/12/5
+// 
+// 
+//
+
 using Common;
 
 public class ShowTimerRequest : BaseRequest {

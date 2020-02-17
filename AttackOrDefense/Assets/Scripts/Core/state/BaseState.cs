@@ -1,8 +1,8 @@
 ﻿//
 // @brief: 状态机对象基类
 // @version: 1.0.0
-// @author helin
-// @date: 8/20/2018
+// @author lhy
+// @date: 2020/2/12
 // 
 // 
 //

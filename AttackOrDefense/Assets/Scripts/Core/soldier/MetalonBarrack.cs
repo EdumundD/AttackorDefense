@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿//
+// @brief: Metalon兵营类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/7
+// 
+// 
+//
 
 class MetalonBarrack :BaseBarrack
 {

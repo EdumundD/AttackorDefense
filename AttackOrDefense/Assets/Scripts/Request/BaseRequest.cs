@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 请求基类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/15
+// 
+// 
+//
+
 using UnityEngine;
 using Common;
 public class BaseRequest : MonoBehaviour {
@@ -7,7 +14,6 @@ public class BaseRequest : MonoBehaviour {
     protected RequestCode requestCode = RequestCode.None;
     protected ActionCode actionCode = ActionCode.None;
     protected static GameFacade _facade;
-    private static object Singleton_Lock = new object();
 
     protected GameFacade facade
     {

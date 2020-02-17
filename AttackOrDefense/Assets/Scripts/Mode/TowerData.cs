@@ -1,8 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//
+// @brief: 防御塔信息类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/1/20
+// 
+// 
+//
+
 
 public class TowerData
 {

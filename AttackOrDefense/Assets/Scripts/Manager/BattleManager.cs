@@ -1,4 +1,13 @@
-﻿using System;
+﻿//
+// @brief: 战斗管理类(战斗逻辑、管理帧同步类)
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/1
+// 
+// 
+//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

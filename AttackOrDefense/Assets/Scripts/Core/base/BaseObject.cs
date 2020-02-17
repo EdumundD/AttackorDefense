@@ -1,12 +1,12 @@
 ﻿//
 // @brief: 物体对象基类
 // @version: 1.0.0
-// @author helin
-// @date: 8/20/2018
+// @author lhy
+// @date: 2020/1/24
 // 
 // 
 //
-using System.Collections;
+
 using System.Collections.Generic;
 
 public class BaseObject : UnityObject

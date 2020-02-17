@@ -1,12 +1,12 @@
 ﻿//
 // @brief: 塔工厂类
 // @version: 1.0.0
-// @author helin
-// @date: 8/20/2018
+// @author lhy
+// @date: 2020/2/6
 // 
 // 
 //
-using System.Collections;
+
 using System.Collections.Generic;
 
 public class TowerFactory

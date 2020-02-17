@@ -1,15 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 物体高亮类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/1/25
+// 
+// 
+//
+
 using UnityEngine;
 using HighlightingSystem;
-using UnityEngine.UI;
 
-public class test : MonoBehaviour
+public class HighLighterController : MonoBehaviour
 {
     private Highlighter m_highlighter;
     void Awake()
     {
-        m_highlighter = this.GetComponent<Highlighter>();
+        m_highlighter = GetComponent<Highlighter>();
         //Instantiate(Resources.Load("Monster/Polygonal Bugs Pack/Polygonal Metalon/Prefabs/Polygonal Metalon Red"), transform.position, transform.rotation);
         
     }

@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//
+// @brief: 打开建筑列表面板类
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/1/22
+// 
+// 
+//
+
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;

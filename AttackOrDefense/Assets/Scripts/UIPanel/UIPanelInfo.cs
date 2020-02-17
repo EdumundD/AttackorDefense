@@ -1,5 +1,13 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿//
+// @brief: UI面板序列化类
+// @version: 1.0.0
+// @author lhy
+// @date: 2019/11/10
+// 
+// 
+//
+
+using UnityEngine;
 using System;
 
 [Serializable]

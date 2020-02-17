@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿//
+// @brief: 士兵移动状态
+// @version: 1.0.0
+// @author lhy
+// @date: 2020/2/13
+// 
+// 
+//
+
 
 public class SoldierMoveState : BaseState
 {
