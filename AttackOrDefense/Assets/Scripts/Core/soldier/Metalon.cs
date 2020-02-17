@@ -27,6 +27,7 @@ public class Metalon : BaseSoldier
         showHP.maxValue = (float)hp;
         showHP.offsetPos = new UnityEngine.Vector2(0, 30);
         showHP.target = m_gameObject.transform;
+
     }
 
     //- 每帧循环
