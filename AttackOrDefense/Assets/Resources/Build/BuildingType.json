@@ -6,8 +6,23 @@
     },
 
     {
-      "buildingTypeString": "BasicArrowTower",
+      "buildingTypeString": "ArrowTowerLv1",
       "path": "Build/Tower/ArrowTower/ArrowTowerLv1"
+    },
+
+    {
+      "buildingTypeString": "ArrowTowerLv2",
+      "path": "Build/Tower/ArrowTower/ArrowTowerLv2"
+    },
+
+    {
+      "buildingTypeString": "ArrowTowerLv3",
+      "path": "Build/Tower/ArrowTower/ArrowTowerLv3"
+    },
+
+    {
+      "buildingTypeString": "ArrowTowerLv4",
+      "path": "Build/Tower/ArrowTower/ArrowTowerLv4"
     },
 
     {

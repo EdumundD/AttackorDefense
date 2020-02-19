@@ -262,7 +262,7 @@ public class GameFacade : MonoBehaviour
     {
         GameData.g_bRplayMode = false;
         _battleManager.startBattle();
-        _uiManager.PushPanelSync(UIPanelType.TestBattle);
+        _uiManager.PushPanelSync(UIPanelType.Battle);
     }
 
     //- 设置用户信息
@@ -382,8 +382,32 @@ public class GameFacade : MonoBehaviour
 
         _battleManager.FrameInputs.Add(tick, frameInput);
     }
+    
+    //- 创建士兵
+    // 创建士兵的时候让UIManager给士兵加上血条
+    // @return none
     public Transform CreateSlider()
     {
         return _uiManager.CreateSlider();
+    }
+
+    //- 显示建筑物信息面板
+    // 
+    // @return none
+    public void ShowBuildingInfoPanel(LiveObject building)
+    {
+        _uiManager.ShowBuildingInfo(building);
+    }
+
+    //隐藏所有Battle面板
+    public void HideAllBattlePanel()
+    {
+        _uiManager.HideAllBattlePanel();
+    }
+
+    //显示Battle/GetBuildingListButton
+    public void ShowBattleGetBuildingListButton()
+    {
+        _uiManager.ShowBattleGetBuildingListButton();
     }
 }

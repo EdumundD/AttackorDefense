@@ -32,16 +32,8 @@
       "path": "UIPanel/GamePanel"
     },
     {
-      "panelTypeString": "OpenBLBtn",
-      "path": "UIPanel/OpenBLBtnPanel"
-    },
-    {
-      "panelTypeString": "BuildingList",
-      "path": "UIPanel/BuildingListPanel"
-    },
-    {
-      "panelTypeString": "TestBattle",
-      "path": "UIPanel/TestBattlePanel"
+      "panelTypeString": "Battle",
+      "path": "UIPanel/BattlePanel"
     }
 
   ]

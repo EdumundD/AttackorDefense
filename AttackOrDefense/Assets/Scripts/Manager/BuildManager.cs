@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using HighlightingSystem;
 
 public class BuildManager : BaseManager
 {
@@ -28,7 +29,7 @@ public class BuildManager : BaseManager
         }
     }
 
-    //存储所有的防御塔Prefavb的路径
+    //存储所有的建筑物Prefavb的路径
     private Dictionary<BuildingType, string> buildingPathDict;
 
     //建筑物
@@ -60,6 +61,7 @@ public class BuildManager : BaseManager
 
     public BuildManager(GameFacade facade) : base(facade) {
         ParseBuildingTypeJson();
+        GameData.g_buildingPathDict = buildingPathDict;
     }
     public override void OnInit()
     {
@@ -74,6 +76,7 @@ public class BuildManager : BaseManager
    
     public void StartBuilding(BuildingType bt, bool isBuildTower)
     {
+        facade.HideAllBattlePanel();
         if (isBuildTower) maskname = "Land";
         else maskname = "Barrack";
         isBuilding = true;
@@ -84,10 +87,10 @@ public class BuildManager : BaseManager
             string path = buildingPathDict.TryGet(bt);
             selectBuilding = GameObject.Instantiate(Resources.Load(path)) as GameObject;
             selectBuilding.transform.SetParent( BuildGo.transform, false);
-            //cubeRenderer = selectBuilding.GetComponent<Renderer>();
             cubeRenderers = new List<Renderer>();
-
         }
+        //将所有可建造土地高亮
+        LandFlashing(true, isBuildTower);
     }
     public override void Update()
     {
@@ -114,7 +117,6 @@ public class BuildManager : BaseManager
                 g_buildmap[(int)target.x, (int)target.z + 1] == 0 || g_buildmap[(int)target.x, (int)target.z + 1] == 3 ||
                 g_buildmap[(int)target.x + 1, (int)target.z + 1] == 0 || g_buildmap[(int)target.x + 1, (int)target.z + 1] == 3)
             {
-                //cubeRenderer.material.color = new Color(200f / 255, 1f / 255, 1f / 255, 255f / 255);
                 isAllowedBuild = false;
                 if(cubeRenderers.Count == 0)
                 {
@@ -136,7 +138,6 @@ public class BuildManager : BaseManager
                 {
                     if (target.x != cubeRenderers[0].gameObject.transform.position.x || target.z != cubeRenderers[0].gameObject.transform.position.z)
                     {
-                        Debug.Log(target.x + "," + target.z + " | " + cubeRenderers[0].gameObject.transform.position.x + cubeRenderers[0].gameObject.transform.position.z);
                         foreach (Renderer renderer in cubeRenderers)
                         {
                             renderer.material.color = new Color(188f / 255, 188f / 255, 188f / 255, 255f / 255);
@@ -153,7 +154,6 @@ public class BuildManager : BaseManager
                     renderer.material.color = new Color(188f / 255, 188f / 255, 188f / 255, 255f / 255);
                 }
                 isAllowedBuild = true;
-                //ubeRenderer.material.color = new Color(188f / 255, 188f / 255, 188f / 255, 255f / 255);
             }
             
             //让建筑物跟随鼠标
@@ -163,6 +163,7 @@ public class BuildManager : BaseManager
             }
             if (Input.GetMouseButtonDown(0) && isAllowedBuild)
             {
+                facade.ShowBattleGetBuildingListButton();
                 isBuilding = false;
                 GetLandData(target).isBuild = true;
                 GetLandData(new Vector3(target.x + 1, target.y, target.z)).isBuild = true;
@@ -171,11 +172,13 @@ public class BuildManager : BaseManager
                 if ((int)buildingType <= GameData.g_towerFactory.towerDataList.Count)
                 {
                     facade.inputMono.frameInput.buildTower = new BuildTower(new FixVector2((Fix64)target.x + 0.5f, (Fix64)target.z + 0.5f), (int)buildingType);
+                    LandFlashing(false, true);
                 }
                 else
                 {
                     facade.inputMono.frameInput.createBarrack = new CreateBarrack(new FixVector2((Fix64)target.x + 0.5f, (Fix64)target.z + 0.5f), 
                         (int)buildingType - GameData.g_towerFactory.towerDataList.Count);
+                    LandFlashing(false, false);
                 }
                 
                 GameObject.Destroy(selectBuilding);
@@ -184,6 +187,14 @@ public class BuildManager : BaseManager
             if (Input.GetKeyDown(KeyCode.R)) selectBuilding.transform.Rotate(Vector3.up, 90);
             if (Input.GetMouseButtonDown(1))
             {
+                foreach (Renderer renderer in cubeRenderers)
+                {
+                    renderer.material.color = new Color(188f / 255, 188f / 255, 188f / 255, 255f / 255);
+                }
+                cubeRenderers.Clear();
+                facade.ShowBattleGetBuildingListButton();
+                LandFlashing(false, true);
+                LandFlashing(false, false);
                 GameObject.Destroy(selectBuilding);
                 isBuilding = false;
                 Init();
@@ -208,6 +219,40 @@ public class BuildManager : BaseManager
             //Debug.LogError("无法找到对应的Land target:" + target.ToString());
         }
         return landData;
+    }
+
+    //- 开启高亮
+    // 
+    // @parm isOn 开启或关闭 isBuildingTower 是否是建造塔
+    // @return none
+    private void LandFlashing(bool isOn,bool isBuildTower)
+    {
+        if (isBuildTower)
+        {
+            for (int i = 1; i < 16; i++)
+            {
+                for (int j = 1; j < 25; j++)
+                {
+                    if (g_buildmap[i, j] == 1 && g_buildmap[i, j] != 3)
+                    {
+                        GetLandData(new Vector3(i, 2, j)).Flashing(isOn);
+                    }
+                }
+            }
+        }
+        else
+        {
+            for (int i = 1; i < 16; i++)
+            {
+                for (int j = 1; j < 44; j++)
+                {
+                    if (g_buildmap[i, j] == 2 && g_buildmap[i, j] != 3)
+                    {
+                        GetLandData(new Vector3(i, 1, j)).Flashing(isOn);
+                    }
+                }
+            }
+        }
     }
 
     [Serializable]

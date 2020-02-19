@@ -118,6 +118,7 @@ public class UIManager:BaseManager {
             instPanel.transform.SetParent(CanvasTransform,false);
             instPanel.GetComponent<BasePanel>().UIMng = this;
             instPanel.GetComponent<BasePanel>().Facade = facade;
+            instPanel.GetComponent<BasePanel>().UIPanelType = panelType;
             panelDict.Add(panelType, instPanel.GetComponent<BasePanel>());
             return instPanel.GetComponent<BasePanel>();
         }
@@ -167,10 +168,34 @@ public class UIManager:BaseManager {
         }
         msgPanel.ShowMessageSync(msg);
     }
+    //为怪物创建血条
     public Transform CreateSlider()
     {
         var slider = GameObject.Instantiate(Resources.Load("UIPanel/Slider")) as GameObject;
         slider.transform.SetParent(CanvasTransform, false);
         return slider.transform;
+    }
+    //设置BuildingInfo
+    public void ShowBuildingInfo(LiveObject building)
+    {
+        if (panelStack.Peek().UIPanelType != UIPanelType.Battle) return;
+        BattlePanel battlePanel = panelStack.Peek() as BattlePanel;
+        battlePanel.ShowBuildingInfo(building);
+    }
+
+    //隐藏所有Battle面板
+    public void HideAllBattlePanel()
+    {
+        if (panelStack.Peek().UIPanelType != UIPanelType.Battle) return;
+        BattlePanel battlePanel = panelStack.Peek() as BattlePanel;
+        battlePanel.HideAll();
+    }
+
+    //显示Battle/GetBuildingListButton
+    public void ShowBattleGetBuildingListButton()
+    {
+        if (panelStack.Peek().UIPanelType != UIPanelType.Battle) return;
+        BattlePanel battlePanel = panelStack.Peek() as BattlePanel;
+        battlePanel.ShowGetBuildingListButton();
     }
 }

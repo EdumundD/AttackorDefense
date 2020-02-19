@@ -55,6 +55,9 @@ public class LiveObject : BaseObject
     private FixVector3 m_createBulletOffset = FixVector3.Zero;
     public FixVector3 createBulletOffset { get { return m_createBulletOffset; } set { m_createBulletOffset = value; } }
 
+    private TowerData towerData = null;
+    public TowerData TowerData { get { return towerData; } set { towerData = value; } }
+
     //- 设置血量
     // 
     // @param value 要设置的血量值
@@ -71,6 +74,21 @@ public class LiveObject : BaseObject
     public Fix64 getHp()
     {
         return m_fixHp;
+    }
+
+    //- 升级
+    // @return none
+    // @author
+    public void lvUp()
+    {
+        if (TowerData.NextBuildingType == BuildingType.None) return;
+        GameData.g_buildingPathDict.TryGetValue(TowerData.NextBuildingType, out string path);
+        destroyGameObject();
+        createFromPrefab(path, this);
+        GameData.g_towerdatas.TryGetValue(TowerData.NextBuildingType, out var data);
+        TowerData = data;
+        UnityTools.Log(m_fixv3LogicPosition.x + "," + m_fixv3LogicPosition.y + "," + m_fixv3LogicPosition.z);
+        updateRenderPosition(0f);
     }
 
     //- 添加我正在攻击的对象
@@ -260,7 +278,7 @@ public class LiveObject : BaseObject
         m_bKilled = true;
         base.killSelf();
     }
-
+    
     //- 加载属性
     // 
     // @return none

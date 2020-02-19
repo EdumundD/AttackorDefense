@@ -20,8 +20,6 @@ public class ArrowTower : BaseTower
     // @return none
     void init()
     {
-        loadProperties();
-
         //每个塔加载的资源不同,所以单独处理
         createFromPrefab("Build/Tower/ArrowTower/ArrowTowerLv1", this);
 
@@ -31,6 +29,7 @@ public class ArrowTower : BaseTower
         //设置名字为魔法塔
         m_scName = "arrowtower";
 
+        //设置子弹发射位置偏移量
         createBulletOffset = new FixVector3((Fix64)0, (Fix64)1, (Fix64)0);
     }
 
@@ -48,8 +47,8 @@ public class ArrowTower : BaseTower
     // @return none
     public override void loadProperties()
     {
-        setDamageValue((Fix64)50);
-        attackRange = (Fix64)6;
-        attackSpeed = (Fix64)1;
+        setDamageValue(TowerData.BuildingAtt);
+        attackRange = TowerData.BuildingAttackRange;
+        attackSpeed = TowerData.BuildingCooling;
     }
 }

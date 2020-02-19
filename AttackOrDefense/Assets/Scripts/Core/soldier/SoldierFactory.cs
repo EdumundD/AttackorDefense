@@ -6,6 +6,7 @@
 // 
 // 
 //
+using HighlightingSystem;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -31,10 +32,16 @@ public class SoldierFactory
         if (barrackID == 1)
         {
             barrack = new MetalonBarrack();
+
+            //开启HighLighter脚本
+            barrack.m_gameObject.GetComponent<Highlighter>().enabled = true;
         }
         if (barrackID == 2)
         {
             barrack = new MechanicalGolemBarrack();
+            
+            //开启HighLighter脚本
+            barrack.m_gameObject.GetComponent<Highlighter>().enabled = true;
         }
         if (barrackID == 3)
         {
